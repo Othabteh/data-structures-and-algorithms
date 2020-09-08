@@ -83,7 +83,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let temArr = str.split('');
+  let arr = temArr.filter((val, index) => {
+    if (index % 2 !== 0) {
+      return 1;
+    } else { return 0; }
+  });
+  return arr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -220,7 +226,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should only return the odd indexed characters from the string', () => {
     expect(onlyOddChars('0123456789')).toStrictEqual('13579');
     expect(onlyOddChars('abcd')).toStrictEqual('bd');
